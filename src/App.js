@@ -7,7 +7,8 @@ import Alert from "./components/Alert";
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
 
 
@@ -50,8 +51,9 @@ function App() {
         <Routes>
           <Route exact path="/about" element={<About mode={mode}/>}>
           </Route>
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Textutils- Word counter, Character counter" mode={mode}/>}>
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try Textutils- Word&Character counter" mode={mode}/>}>
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         {/* <About/>
         <TextForm showAlert={showAlert} heading="Enter text to analyze" mode={mode}/> */}
